@@ -1,5 +1,5 @@
 let turnScore = 0;
-let rollScoreTotal = 0;
+let roll = 0;
 let totalScore1 = 0;
 let totalScore2 = 0;
 
@@ -26,32 +26,35 @@ function scoreTotal(turnScore, totalScore1) {
     }
 }
 -----------------------------------------------------------------------------------
-function PigDice(player1, player2) {
-    this.player1 = {name: player1, score: 0 }
-    this.player2 = {name: player2, score: 0 }
-    this.currentRoll = 0;
-    this.turnScore = 0;
-    this.currentPlayer = 1;
-}
+    function PigDice(player1, player2) {
+        this.player1 = { name: player1, score: 0 }
+        this.player2 = { name: player2, score: 0 }
+        this.currentRoll = 0;
+        this.turnScore = 0;
+        this.currentPlayer = 1;
+    }
 
-PigDice.prototype.rollDice = function() {
+PigDice.prototype.rollDice = function () {
     return Math.floor(Math.random() * 6) + 1;
 }
 
-function rollResult() {
+function rollTurnScore() {
     let rollValue = rollDice();
-        if (rollValue === 1) {
-        rollScoreTotal = 0;
+    if (rollValue === 1) {
+        turnScore = 0;
+        return turnScore;
     } else {
-        }
-        rollScoreTotal += rollValue;
-    return rollValue;
+    }
+    turnScore += rollValue;
+    return turnScore;
 }
 
-PigDice.prototype.rollResult = function(roll) {
+
+
+PigDice.prototype.rollResult = function (roll) {
     //while(score < 100) {
     this.currentRoll = rollResult();
-    if(this.currentRoll === 1) {
+    if (this.currentRoll === 1) {
         this.player1.turnScore = 0;
     } else {
         this.player1.turnScore += this.currentRoll;

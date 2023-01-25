@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <script src="js/scripts.js"></script>
+    <title>Pig Dice</title>
+</head>
+
+<body>
+    <h1>PIG DICE</h1>
+    <div class="play">
+        <button type="button" class="btn" id="play-btn">PLAY</button>
+    </div>
+    <div class="hidden" id="score">
+        <div class="scoreboard">
+            <h2>Play 1 Score: <span id="player-one-score"></span></h2>
+            <h2>Play 2 Score: <span id="player-two-score"></span></h2>
+        </div>
+        <div id="game">
+            <h3><span id="dice-value"></span></h3>
+            <h4>Turn Total: <span id="turn-total"></span></h4>
+                <button type ="button" class="btn-good" id="roll">Roll</button>
+                <button type ="button" class="btn-bad" id="hold">Hold</button>
+                <p>Your Turn <span id="player-id"></span></p>
+        </div>
+    </div>
+</body>
+
+</html>

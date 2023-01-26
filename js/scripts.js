@@ -4,10 +4,14 @@ function PigDice(player1, player2) {
     this.player2 = { player2, score: 0 }
     this.currentRoll = 0;
     this.turnScore = 0;
-    this.currentPlayer = 1; //player1
+    this.currentPlayer = 1; 
 }
 
 PigDice.prototype.rollDice = function () {
+    return Math.floor(Math.random() * 6) + 1;
+}
+
+function rollDice() {
     return Math.floor(Math.random() * 6) + 1;
 }
 
@@ -27,13 +31,11 @@ PigDice.prototype.rollResult = function () {
     }
 }
 
-
 let player = true
-   newPlayer = !player 
----------------------------------------------------------
+new Player = !player 
 
 PigDice.prototype.playGame = function () {
-    this.currentRoll = rollDice();
+    this.currentRoll = PigDice.rollDice();
     if (this.currentRoll === 1) {
         this.turnScore= 0;
         this.switchPlayer();
@@ -55,8 +57,6 @@ PigDice.prototype.switchPlayer = function() {
         this.currentPlayer = this.player1;
     }
 }
---------------------------------------------------------------
-*/
 
 function Scoreboard() {
     this.players = {};

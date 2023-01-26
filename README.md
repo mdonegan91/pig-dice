@@ -27,5 +27,3 @@ Expected Output: 10
 Test: It should reset turn score counter to zero if a 1 is rolled
 Code rollTurnScore(4, 5, 1)
 Expected Output: 0
-
-Test: It should

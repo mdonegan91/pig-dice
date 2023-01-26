@@ -28,12 +28,12 @@
 // }
 
 function PigDice(player1, player2) {
-        this.player1 = { player1, score: 0 }
-        this.player2 = { player2, score: 0 }
-        this.currentRoll = 0;
-        this.turnScore = 0;
-        this.currentPlayer = 1; //player1
-    }
+    this.player1 = { player1, score: 0 }
+    this.player2 = { player2, score: 0 }
+    this.currentRoll = 0;
+    this.turnScore = 0;
+    this.currentPlayer = 1; //player1
+}
 
 PigDice.prototype.rollDice = function () {
     return Math.floor(Math.random() * 6) + 1;
@@ -59,15 +59,33 @@ PigDice.prototype.rollResult = function () {
 
 /* let player = true
    newPlayer = !player 
-PigDice.prototype.switchPlayer = function() {
-    if(this.currentPlayer === player1)
-        this.currentPlayer = player2;
+---------------------------------------------------------
+PigDice.prototype.playGame = function () {
+    this.currentRoll = rollDice();
+    if (this.currentRoll === 1) {
+        this.turnScore= 0;
+        this.switchPlayer();
     } else {
-        this.currentPlayer = player1;
+        this.turnScore += this.currentRoll;
     }
 }
+
+PigDice.prototype.hold = function() {
+    this.currentPlayer.score += this.turnScore;
+    this.turnScore = 0;
+    this.switchPlayer();
+}
+
+PigDice.prototype.switchPlayer = function() {
+    if(this.currentPlayer = this.player1) {
+        this.currentPlayer = this.player2;
+    } else { 
+        this.currentPlayer = this.player1;
+    }
+}
+--------------------------------------------------------------
 */
-function Scoreboard () {
+function Scoreboard() {
     this.players = {};
     this.rollesResult = 1;
 }

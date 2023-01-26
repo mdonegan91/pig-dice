@@ -1,31 +1,3 @@
-// let turnScore = 0;
-// let roll = 0;
-// let totalScore1 = 0;
-// let totalScore2 = 0;
-
-// function rollTurnScore() {
-//     let rollValue = rollDice();
-//     if (rollValue === 1) {
-//         turnScore = 0;
-//         return turnScore;
-//     } else {
-//     }
-//     turnScore += rollValue;
-//     return turnScore;
-// }
-
-// function scoreTotal(turnScore, totalScore1) {
-//     roll = rollDice();
-//     if (roll === 1) { // if(roll !== 1 ) {
-//         turnScore = 0;
-//         console.log("player1 score: " + roll)
-//         return totalScore1;
-//     } else {
-//         turnScore += roll
-//         totalScore1 += turnScore;
-//         return totalScore1;
-//     }
-// }
 
 function PigDice(player1, player2) {
     this.player1 = { player1, score: 0 }
@@ -56,10 +28,10 @@ PigDice.prototype.rollResult = function () {
 }
 
 
-
-/* let player = true
+let player = true
    newPlayer = !player 
 ---------------------------------------------------------
+
 PigDice.prototype.playGame = function () {
     this.currentRoll = rollDice();
     if (this.currentRoll === 1) {
@@ -85,6 +57,7 @@ PigDice.prototype.switchPlayer = function() {
 }
 --------------------------------------------------------------
 */
+
 function Scoreboard() {
     this.players = {};
     this.rollesResult = 1;

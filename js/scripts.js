@@ -1,4 +1,5 @@
 
+
 function PigDice(player1, player2) {
     this.player1 = 'player1'
     this.player2 = 'player2'
@@ -8,6 +9,8 @@ function PigDice(player1, player2) {
     this.turnScore = 0;
     this.currentPlayer = 1; 
 }
+
+let pigDice = new PigDice();
 
 // function PigDice(playerId, turnScore, totalScore) {
 //     this.playerId = playerId;
@@ -28,32 +31,22 @@ function rollDice() {
 // }
 
 PigDice.prototype.rollResult = function () {
-    //while(score < 100) {
+    console.log(pigDice.turnScore)
     this.currentRoll = rollDice();
     if (this.currentRoll === 1) {
-        this.turnScore = 0;
-        // return this.turnScore;
-        this.switchPlayer(); // does this work?
+        pigDice.turnScore = 0;
+        // this.switchPlayer(); // does this work?
     } else {
-        this.turnScore += this.currentRoll
-        // return this.turnScore;
+        console.log(pigDice.turnScore)
+        pigDice.turnScore += this.currentRoll
     }
-    console.log(this.turnScore + ": turn score");
+    console.log(pigDice.turnScore + ": turn score");
     console.log(this.currentRoll + ": current roll");
+    return pigDice.turnScore;
 }
 
-// let player = true
-// new Player = !player 
 
-// PigDice.prototype.playGame = function () {
-//     this.currentRoll = PigDice.rollDice();
-//     if (this.currentRoll === 1) {
-//         this.turnScore= 0;
-//         this.switchPlayer();
-//     } else {
-//         this.turnScore += this.currentRoll;
-//     }
-// }
+
 PigDice.prototype.switchPlayer = function() {
     if(this.currentPlayer = this.player1) {
         this.currentPlayer = this.player2;
@@ -64,15 +57,16 @@ PigDice.prototype.switchPlayer = function() {
 
 PigDice.prototype.hold = function() {
     if (this.currentPlayer === 1) {
-        this.player1Score += this.turnScore;
-        this.turnScore = 0;
-        this.switchPlayer();
+        parseInt(this.player1Score) += this.turnScore;
+        // this.turnScore = 0;
+        // this.switchPlayer();
     } 
     else {
         this.player2Score += this.turnScore;
-        this.turnScore = 0;
-        this.switchPlayer();
+        // this.turnScore = 0;
+        // this.switchPlayer();
     } 
+    pigDice.turnScore = 0;
 }
 
 
@@ -92,13 +86,12 @@ function gameMode(event) {
 }
 
 function handleRoll() {
-    // let PigDice = new PigDice();
-    // let rolled = rollDice();
     let rolledResult = PigDice.prototype.rollResult();
+    console.log(rolledResult);
     document.getElementById("dice-value").innerText = null;
-    // let playerId = PigDice.currentPlayer;
-    // let player = PigDice.players[playerId];
-    if (rolledResult === 0) {
+    if (currentPlayer === 1) {
+        rolledResult;
+        if (rolledResult === 1) {
         document.getElementById("player-id").innerText = PigDice.prototype.currentPlayer;
         document.getElementById("turn-total").innerText = "You rolled a 1, bummer, you're still in the game but pass the mouse to the other player";
     } else {
@@ -106,21 +99,22 @@ function handleRoll() {
         document.getElementById("turn-total").innerText = parseInt(PigDice.prototype.turnScore);
         console.log(rolledResult);
     }
+}
        //     //something about if they hit 100 here
 }
 
 function handleHold() {
-    // let scoreboard = new Scoreboard();
-    // let hold = PigDice.prototype.hold()
     let hold = PigDice.prototype.hold();
-    // document.getElementById("hold").innerText = null;
+    let player1Score = pigDice.player1Score;
+    let player2Score = pigDice.player2Score;
     if (PigDice.currentPlayer === 1) {
         hold;
-        document.getElementById("player-one-score").innerText = PigDice.prototype.player1Score
+        document.getElementById("player-one-score").innerText = player1Score
+        pigDice.switchPlayer();
     }
     else {
         hold;
-        document.getElementById("player-two-score").innerText = PigDice.prototype.player1Score
+        document.getElementById("player-two-score").innerText = player2Score
     }
 
 }

@@ -17,7 +17,7 @@ _A dice game built to practice test driven development in JavaScript._
 
 * _Clone this repository to your desktop_
 * _Navigate to the top level of the directory_
-* _Open madlibs.html in your browser_
+* _Open index.html in your browser_
 
 ## Known Bugs
 

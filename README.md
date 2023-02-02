@@ -27,9 +27,9 @@ _A dice game built to practice test driven development in JavaScript._
 
 Copyright (c) _2023 Molly Donegan_
 
-``Tests
+## Tests
 
-Describe: rollDice()
+``Describe: rollDice()
 
 Test: It should randomly generate a number from 1 to 6.
 Code: rollDice()

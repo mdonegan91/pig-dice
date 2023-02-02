@@ -29,7 +29,7 @@ Copyright (c) _2023 Molly Donegan_
 
 ## Tests
 
-``Describe: rollDice()
+```Describe: rollDice()
 
 Test: It should randomly generate a number from 1 to 6.
 Code: rollDice()
@@ -57,4 +57,4 @@ Expected Output: 10
 
 Test: It should reset turn score counter to zero if a 1 is rolled
 Code rollResult(4, 5, 1)
-Expected Output: 0``
+Expected Output: 0```
